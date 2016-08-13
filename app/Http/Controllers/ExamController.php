@@ -14,9 +14,10 @@ class ExamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($car_id=1, $exam_id = 0)
     {
-
+        $exam = Exam::where('car_id', $car_id)->where('id', '>', $exam_id)->get();
+        return json_encode($exam);
     }
 
     /**
@@ -40,13 +41,14 @@ class ExamController extends Controller
         $exam = new Exam();
         $exam->car_id = $request->car_id;
         $exam->mission_id = $request->mission_id;
-        $t=time();
+        $t = time();
         $exam->time = time();
         $exam->is_get = $request->is_get;
         //TODO 这里还得添加获取经纬度的方法
         $exam->lat = 0;
         $exam->lon = 0;
         $exam->save();
+        return 1;
     }
 
     /**
