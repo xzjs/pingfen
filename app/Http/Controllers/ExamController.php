@@ -16,7 +16,7 @@ class ExamController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -26,30 +26,33 @@ class ExamController extends Controller
      */
     public function create()
     {
-        //
+        return view('exam.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $exam=new Exam();
-        $exam->car_id=$request->car_id;
-        $exam->mission_id=$request->mission_id;
-        $exam->time=time();
-        $exam->is_get=$request->is_get;
+        $exam = new Exam();
+        $exam->car_id = $request->car_id;
+        $exam->mission_id = $request->mission_id;
+        $t=time();
+        $exam->time = time();
+        $exam->is_get = $request->is_get;
         //TODO 这里还得添加获取经纬度的方法
+        $exam->lat = 0;
+        $exam->lon = 0;
         $exam->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -60,7 +63,7 @@ class ExamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,17 +74,17 @@ class ExamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $exam=Exam::find($id);
-        $exam->car_id=$request->car_id;
-        $exam->mission_id=$request->mission_id;
-        $exam->time=time();
-        $exam->is_get=$request->is_get;
+        $exam = Exam::find($id);
+        $exam->car_id = $request->car_id;
+        $exam->mission_id = $request->mission_id;
+        $exam->time = time();
+        $exam->is_get = $request->is_get;
         //TODO 这里还得添加获取经纬度的方法
         $exam->save();
     }
@@ -89,12 +92,12 @@ class ExamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $exam=Exam::find($id);
+        $exam = Exam::find($id);
         $exam->delete();
     }
 }

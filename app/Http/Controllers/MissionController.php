@@ -26,7 +26,7 @@ class MissionController extends Controller
      */
     public function create()
     {
-        //
+        return view('mission.create');
     }
 
     /**
