@@ -13,6 +13,6 @@ class AppController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View 首页视图
      */
     public function index(){
-        return view('app/index');
+        return view('app.index');
     }
 }
