@@ -8,5 +8,5 @@
 $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
 $msg = 'hello';
 $len = strlen($msg);
-socket_sendto($sock, $msg, $len, 0, '0.0.0.0', 6518);
+socket_sendto($sock, $msg, $len, 0, '192.168.253.109', 6518);
 socket_close($sock);

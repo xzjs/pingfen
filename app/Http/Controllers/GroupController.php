@@ -16,7 +16,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-
+        echo '1';
     }
 
     /**

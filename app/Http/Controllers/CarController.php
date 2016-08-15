@@ -93,4 +93,16 @@ class CarController extends Controller
         $car = Car::find($id);
         $car->delete();
     }
+
+    /**
+     * 根据车名获取车辆的信息
+     * @param Request $request
+     * @return string
+     */
+    public function get_car_id(Request $request)
+    {
+        $car = new Car();
+        $id = $car->where('name', $request->name)->first()->value('id');
+        return $id;
+    }
 }

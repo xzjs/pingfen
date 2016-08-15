@@ -54,7 +54,7 @@ class MissionsTableSeeder extends Seeder
                 'id' => 5,
                 'name' => '碰撞假人',
                 'description' => '',
-                'point' => 0,
+                'point' => -100,
                 'group' => 3,
             ),
             5 => 
@@ -110,7 +110,7 @@ class MissionsTableSeeder extends Seeder
                 'id' => 12,
                 'name' => '碰撞其他车辆',
                 'description' => NULL,
-                'point' => 0,
+                'point' => -100,
                 'group' => 5,
             ),
             12 => 
@@ -198,7 +198,7 @@ class MissionsTableSeeder extends Seeder
                 'id' => 23,
                 'name' => '碰撞车辆',
                 'description' => NULL,
-                'point' => 0,
+                'point' => -100,
                 'group' => 7,
             ),
             23 => 
@@ -366,7 +366,7 @@ class MissionsTableSeeder extends Seeder
                 'id' => 44,
                 'name' => '碰撞车辆',
                 'description' => NULL,
-                'point' => 0,
+                'point' => -100,
                 'group' => 15,
             ),
             44 => 
