@@ -8,8 +8,13 @@ class Exam extends Model
 {
     public $timestamps = false;
 
-    public function missions()
+    public function mission()
     {
         return $this->belongsTo('App\Mission');
+    }
+
+    public function car()
+    {
+        return $this->belongsTo('App\Car');
     }
 }

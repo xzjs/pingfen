@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('exam/get_message/car_id/{car_id}/time/{time}', 'ExamController@get_message');
+
 Route::resource('car', 'CarController');
 Route::resource('mission', 'MissionController');
 Route::resource('exam', 'ExamController');
