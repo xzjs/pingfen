@@ -53,11 +53,7 @@ class Events
         $db1 = Db::instance('db1');
         // 向所有人发送 
         //Gateway::sendToAll("$client_id said $message");
-//        $db1 = Db::instance('db1');
-//        $insert_id = $db1->insert('gps')->cols(array('message' => $message, 'time' => time()))->query();
-//        if ($insert_id > 0) {
-//            Gateway::sendToClient($client_id, 1);
-//        }
+
         $m = json_decode($message);
         foreach ($m as $item) {
             $array = array(
@@ -84,6 +80,11 @@ class Events
             $result = json_decode($result, true);
             if ($result['status'] != 0) {
                 print_r($result);
+            }
+            $db1 = Db::instance('db1');
+            $insert_id = $db1->insert('gps')->cols(array('vtx_id' => $item[0], 'no' => $item[1],'time'=>$item[2],'lon'=>$item[3],'lat'=>$item[4],'angel'=>$item[5]))->query();
+            if(!$insert_id){
+                echo 'error';
             }
         }
     }
