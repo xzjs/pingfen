@@ -26,12 +26,22 @@
         console.log(data);
       });
 
-      // $.getJSON("{{route('group.index')}}", function(data) {
-      //   //$("#select_car").html('<option  selected="selected">请选择参赛车辆</option>');//清空info内容
-      //   $.each(data, function(i, item) {
-      //       $("#select_car").append("<option value="+ item.id +">"+ item.name + "</option>");
-      //   });
-      // });
+      $.getJSON("{{route('group.index')}}", function(data) {
+        //$("#select_car").html('<option  selected="selected">请选择参赛车辆</option>');//清空info内容
+        $.each(data, function(i, item) {
+            //$("#select_car").append("<option value="+ item.id +">"+ item.name + "</option>");
+            //$("#startexam").append(html);
+            var legend = '<form id="exam"' +item.id
+                     + '><fieldset data-role="collapsible"><legend>'
+                     + item.name
+                     + '</legend><div data-role="controlgroup">';            
+            $.each(item.missions, function(j, mitem) {
+                var checkbox = '<input type="checkbox" name="m'+mitem.id+'point'+mitem.point+'" id=m"'+ mitem.id +'"><label for="checkbox-1-am'+mitem.id+'point'+mitem.point+'">'+mitem.name+'</label>';
+            });
+            var html = legend + checkbox + '</div></fieldset></form>';
+            $("#startexam").append(html);
+        });
+      });
 
     });
   </script>
@@ -72,7 +82,7 @@
     </div>
     <div role="main" class="ui-content">
 
-      <a class="ui-btn">开始比赛</a>
+      <a id="startexam" class="ui-btn">开始比赛</a>
 <!--       <fieldset data-role="controlgroup" data-type="vertical">
         <legend>城市1 任务启动: 20</legend>
         <input id="11" name="11" type="checkbox">
@@ -81,11 +91,9 @@
         <label for="12">是否无碰撞行驶</label>
       </fieldset> -->
       
-      <form>
+<!--       <form>
           <fieldset data-role="collapsible">
               <legend>Legend</legend>
-              <label for="textinput-f">Text Input:</label>
-              <input type="text" name="textinput-f" id="textinput-f" placeholder="Text input" value="">
               <div data-role="controlgroup">
                   <input type="checkbox" name="checkbox-1-a" id="checkbox-1-a">
                   <label for="checkbox-1-a">One</label>
@@ -95,7 +103,9 @@
                   <label for="checkbox-3-a">Three</label>
               </div>
           </fieldset>
-      </form>
+      </form> -->
+
+
     </div>
     <div data-role="footer" data-position="fixed">
       <h3>比赛计时 12:09</h3>
