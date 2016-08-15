@@ -23,45 +23,22 @@
         console.log(data);
       });
 
-      // collapsible
-      // $.getJSON("{{route('group.index')}}", function(data) {
-      //   //$("#select_car").html('<option  selected="selected">请选择参赛车辆</option>');//清空info内容
-      //   $.each(data, function(i, item) {
-      //       //$("#select_car").append("<option value="+ item.id +">"+ item.name + "</option>");
-      //       //$("#startexam").append(html);
-      //       var legend = '<form id="exam' +item.id
-      //                + '"><fieldset data-role="collapsible"><legend>任务：'
-      //                + item.name
-      //                + '</legend><div data-role="controlgroup">';            
-      //       $.each(item.missions, function(j, mitem) {
-      //           var checkbox = '<input type="checkbox" name="m'+mitem.id+'point'+mitem.point+'" id="m'+ mitem.id +'"><label for="m'+mitem.id+'point'+mitem.point+'">'+mitem.name+'</label>';
-      //           legend = legend + checkbox;
-      //       });
-      //       var html = legend + '</div></fieldset></form>';
-      //       $("#pageexam").append(html);
-      //       if(i==0){
-      //         return false;
-      //       }
-      //   });
-      // });
-
-
       $.getJSON("{{route('group.index')}}", function(data) {
         //$("#select_car").html('<option  selected="selected">请选择参赛车辆</option>');//清空info内容
         $.each(data, function(i, item) {
             //$("#select_car").append("<option value="+ item.id +">"+ item.name + "</option>");
             //$("#startexam").append(html);
-            var legend = '<fieldset data-role="controlgroup" data-type="vertical"><legend>任务123：'+item.name+'</legend>';          
+            var legend = '<form id="exam' +item.id
+                     + '"><fieldset data-role="collapsible"><legend>任务：'
+                     + item.name
+                     + '</legend><div data-role="controlgroup">';            
             $.each(item.missions, function(j, mitem) {
-                //var checkbox = '<input type="checkbox" name="m'+mitem.id+'point'+mitem.point+'" id="m'+ mitem.id +'"><label for="m'+mitem.id+'point'+mitem.point+'">'+mitem.name+'</label>';
-                var checkbox = '<input id="m'+ mitem.id +'" name="m'+mitem.id+'point'+mitem.point+'" type="checkbox"><label for="m'+mitem.id+'point'+mitem.point+'">是否识别绿灯起步 20</label>'
+                var checkbox = '<input type="checkbox" name="m'+mitem.id+'point'+mitem.point+'" id="m'+ mitem.id +'"><label for="m'+mitem.id+'point'+mitem.point+'">'+mitem.name+'</label>';
                 legend = legend + checkbox;
             });
-            var html = legend + '</fieldset>';
+            var html = legend + '</div></fieldset></form>';
             $("#pageexam").append(html);
-            // if(i==0){
-            //   return false;
-            // }
+            
         });
       });
   </script>
@@ -103,15 +80,14 @@
     </div>
     <div role="main" class="ui-content" id="pageexam">
 
-      <a id="startexam" class="ui-btn">开始比赛</a>
-
+  <!--     <a id="startexam" class="ui-btn">开始比赛</a>
       <fieldset data-role="controlgroup" data-type="vertical">
         <legend>城市1 任务启动: 20</legend>
         <input id="11" name="11" type="checkbox">
         <label for="11">是否识别绿灯起步 20</label>
         <input id="12" name="12" type="checkbox">
         <label for="12">是否无碰撞行驶</label>
-      </fieldset>
+      </fieldset> -->
       
 <!--       <form>
           <fieldset data-role="collapsible">
