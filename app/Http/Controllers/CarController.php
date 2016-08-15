@@ -10,9 +10,8 @@ use App\Http\Requests;
 class CarController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 获取所有车辆的信息
+     * @return string 车辆信息的json
      */
     public function index()
     {
