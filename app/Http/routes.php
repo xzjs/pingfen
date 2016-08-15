@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('exam/get_message/car_id/{car_id}/time/{time}', 'ExamController@get_message');
 Route::get('app','AppController@index');
+Route::get('match/start/{car_id}','MatchController@start');
+Route::get('match/end/{car_id}','MatchController@end');
 
 Route::resource('car', 'CarController');
 Route::resource('mission', 'MissionController');
