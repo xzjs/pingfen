@@ -16,7 +16,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        $cars=Car::all();
+        return json_encode($cars);
     }
 
     /**
