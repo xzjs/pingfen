@@ -10,13 +10,14 @@ use App\Http\Requests;
 class GroupController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * 获取所有考点
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        echo '1';
+        $groups = Group::with('missions')->get();
+        return json_encode($groups);
     }
 
     /**
