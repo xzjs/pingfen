@@ -26,3 +26,5 @@ Route::resource('car', 'CarController');
 Route::resource('mission', 'MissionController');
 Route::resource('exam', 'ExamController');
 Route::resource('group', 'GroupController');
+Route::resource('intervention', 'InterventionController');
+

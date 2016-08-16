@@ -99,12 +99,18 @@ class MatchController extends Controller
     /**
      * 开始比赛
      * @param $car_id 车辆id
+     * @return string 返回的异常
      */
     public function start($car_id)
     {
-        $match = new Match();
-        $match->car_id = $car_id;
-        $match->save();
+        try {
+            $match = new Match();
+            $match->car_id = $car_id;
+            $match->save();
+        } catch (Exception $ex) {
+            return $ex->getMessage();
+        }
+
     }
 
     /**
