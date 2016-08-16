@@ -4206,3 +4206,18 @@ Stack trace:
 [2016-08-16 11:40:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'view' (T_STRING)' in C:\phpStudy\WWW\pingfen\app\Http\Controllers\WebController.php:13
 Stack trace:
 #0 {main}  
+[2016-08-16 13:09:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL)' in C:\phpStudy\WWW\pingfen\app\Http\routes.php:20
+Stack trace:
+#0 {main}  
+[2016-08-16 13:12:47] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL)' in C:\phpStudy\WWW\pingfen\app\Http\routes.php:20
+Stack trace:
+#0 {main}  
+[2016-08-16 13:12:51] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL)' in C:\phpStudy\WWW\pingfen\app\Http\routes.php:20
+Stack trace:
+#0 {main}  
+[2016-08-16 13:12:54] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL)' in C:\phpStudy\WWW\pingfen\app\Http\routes.php:20
+Stack trace:
+#0 {main}  
+[2016-08-16 13:12:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL)' in C:\phpStudy\WWW\pingfen\app\Http\routes.php:20
+Stack trace:
+#0 {main}  
