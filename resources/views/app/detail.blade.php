@@ -16,39 +16,39 @@
     <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn">开始干预</a>
     <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn-hidden">结束干预</a>
 </div>
-<article class="weui_article p2-start">
+<article class="p2-start">
     <a href="javascript:;" class="weui_btn weui_btn_primary">开始比赛</a>
-</article>
-<div class="p2-footer">
-    <a href="javascript:;" class="weui_btn weui_btn_warn p2-end-btn">结束比赛</a>
-    <p class="p2-time">比赛进度<label for="">12:20</label></p>
-</div>
-<article class="weui_article">
-    <div class="weui_cells_title">复选列表项</div>
-    <a href="javascript:;"></a>
-    <div class="weui_cells weui_cells_checkbox">
-        <label class="weui_cell weui_check_label" for="s11">
-            <div class="weui_cell_hd">
-                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
-                <i class="weui_icon_checked"></i>
-            </div>
-            <div class="weui_cell_bd weui_cell_primary">
-                <p>standard is dealt for u.</p>
-            </div>
-        </label>
-        <label class="weui_cell weui_check_label" for="s12">
-            <div class="weui_cell_hd">
-                <input type="checkbox" name="checkbox1" class="weui_check" id="s12">
-                <i class="weui_icon_checked"></i>
-            </div>
-            <div class="weui_cell_bd weui_cell_primary">
-                <p>standard is dealicient for u.</p>
-            </div>
-        </label>
+    <div class="p2-on">
+        <p>比赛时间:&nbsp;&nbsp;<label>12:10</label></p>
+        <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn">结束</a>
     </div>
 </article>
+<article class="weui_article" style="margin-top: 70px;">
+    {{--<div class="weui_cells_title">复选列表项</div>--}}
+    @foreach($groups as $group)
+        <a href="javascript:;" class="weui_btn_mini" onclick="get_group_id('{{$group->id}}')">开始{{$group->name}}</a>
+        <div class="weui_cells weui_cells_checkbox">
+            @foreach($group->missions as $mission)
+                <label class="weui_cell weui_check_label" for="s11"
+                       onclick="exam('{{$car_id}}','{{$group->id}}','{{$mission->id}}')">
+                    <div class="weui_cell_hd">
+                        <input type="checkbox" class="weui_check" name="checkbox1" id="s11">
+                        <i class="weui_icon_checked"></i>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>{{$mission->name}}</p>
+                    </div>
+                </label>
+            @endforeach
+        </div>
+    @endforeach
+</article>
+{{csrf_field()}}
 <script>
     var group_id = 1;
+    function get_group_id(g_id) {
+        group_id = g_id;
+    }
     function start() {
         $.get('{{url("/match/start/$car_id")}}');
     }
@@ -65,6 +65,19 @@
             var i = "a" + (1 - type);
             $('#a' + type).hide();
             $('#a' + i).show();
+        });
+    }
+    function exam(car_id, group_id, mission_id) {
+        var data = {
+            "car_id": car_id,
+            "group_id": group_id,
+            "mission_id": mission_id,
+            "_token":$('input[type=hidden]').value
+        };
+        $.post('{{route('exam.store')}}', data, function (a) {
+            if (a != 1) {
+                alert(a);
+            }
         });
     }
 </script>
