@@ -4,7 +4,19 @@
 	<title>Page Title</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script type="text/javascript">
+  $("input[id*='m']").click(function(){
+        alert($(this).attr("id"));
+        // var car_id = $("selected").val();
+        // alert('c:' + car_id);
+        var mission_id = $(this).attr("id");
+        // alert('m:' + mission_id);
+        // $.post
+      });
+
+  </script>
   <script type="text/javascript">
       $.getJSON("{{ route('car.index') }}",function(data){
         // alert("Data: " + data + "\nStatus: " + status);
@@ -54,7 +66,7 @@
             var legend = '<fieldset data-role="controlgroup" data-type="vertical"><legend>任务123：'+item.name+'</legend>';          
             $.each(item.missions, function(j, mitem) {
                 //var checkbox = '<input type="checkbox" name="m'+mitem.id+'point'+mitem.point+'" id="m'+ mitem.id +'"><label for="m'+mitem.id+'point'+mitem.point+'">'+mitem.name+'</label>';
-                var checkbox = '<input id="m'+ mitem.id +'" name="m'+mitem.id+'point'+mitem.point+'" type="checkbox"><label for="m'+mitem.id+'point'+mitem.point+'">是否识别绿灯起步 20</label>'
+                var checkbox = '<input id="'+ mitem.id +'" name="m'+mitem.id+'point'+mitem.point+'" type="checkbox"><label for="m'+mitem.id+'point'+mitem.point+'">'+mitem.name+'</label>'
                 legend = legend + checkbox;
             });
             var html = legend + '</fieldset>';
@@ -64,8 +76,11 @@
             // }
         });
       });
+       
+      
   </script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+ 
 
 </head>
 
@@ -105,13 +120,13 @@
 
       <a id="startexam" class="ui-btn">开始比赛</a>
 
-      <fieldset data-role="controlgroup" data-type="vertical">
+<!--       <fieldset data-role="controlgroup" data-type="vertical">
         <legend>城市1 任务启动: 20</legend>
         <input id="11" name="11" type="checkbox">
         <label for="11">是否识别绿灯起步 20</label>
         <input id="12" name="12" type="checkbox">
         <label for="12">是否无碰撞行驶</label>
-      </fieldset>
+      </fieldset> -->
       
 <!--       <form>
           <fieldset data-role="collapsible">

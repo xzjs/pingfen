@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "barryvdh/laravel-ide-helper": "^2.2",
         "orangehill/iseed": "dev-master",
-        "mpociot/laravel-apidoc-generator": "^1.5"
+        "mpociot/laravel-apidoc-generator": "^1.5",
+        "twbs/bootstrap": "^3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

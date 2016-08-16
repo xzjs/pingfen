@@ -15,4 +15,12 @@ class AppController extends Controller
     public function index(){
         return view('app.index');
     }
+
+    public function page1(){
+        return view('app.page1');
+    }
+
+    public function page2(){
+        return view('app.page2');
+    }
 }
