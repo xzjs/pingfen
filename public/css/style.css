@@ -1,0 +1,74 @@
+body{
+	background: #fff;
+}
+.p1-wrapper{
+	position: relative;
+}
+.p1-slec{
+	position: absolute;
+	top: 80px;
+	left: 0;
+	width: 100%;
+	padding:20px 15px;
+}
+.p1-slec select{
+	width: 80%;
+	margin: 0 auto;
+	height: 46px;
+  	line-height: 46px;
+}
+.p1-form{
+	display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.p1-form:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.p1-form::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.p1-form:-ms-input-placeholder {
+  color: #999;
+}
+.p1-form::-webkit-input-placeholder {
+  color: #999;
+}
+.p1-go{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	padding: 20px 15px;
+	top: 220px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
