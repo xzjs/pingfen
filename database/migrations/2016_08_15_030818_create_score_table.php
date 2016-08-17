@@ -12,7 +12,7 @@ class CreateScoreTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('score', function(Blueprint $table)
+		Schema::create('scores', function(Blueprint $table)
 		{
 			$table->integer('id', true);
 			$table->integer('car_id')->nullable();
