@@ -23,7 +23,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '识别绿灯起步',
                 'description' => '',
                 'point' => 10,
-                'group' => 2,
+                'group_id' => 2,
             ),
             1 => 
             array (
@@ -31,7 +31,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞行驶',
                 'description' => '',
                 'point' => 10,
-                'group' => 2,
+                'group_id' => 2,
             ),
             2 => 
             array (
@@ -39,7 +39,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '减速慢行',
                 'description' => '',
                 'point' => 20,
-                'group' => 3,
+                'group_id' => 3,
             ),
             3 => 
             array (
@@ -47,7 +47,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '停车让行',
                 'description' => '',
                 'point' => 20,
-                'group' => 3,
+                'group_id' => 3,
             ),
             4 => 
             array (
@@ -55,7 +55,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰撞假人',
                 'description' => '',
                 'point' => -100,
-                'group' => 3,
+                'group_id' => 3,
             ),
             5 => 
             array (
@@ -63,7 +63,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '绕行',
                 'description' => '',
                 'point' => -20,
-                'group' => 3,
+                'group_id' => 3,
             ),
             6 => 
             array (
@@ -71,7 +71,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '遇到红灯排队停车',
                 'description' => '',
                 'point' => 20,
-                'group' => 4,
+                'group_id' => 4,
             ),
             7 => 
             array (
@@ -79,7 +79,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '变绿灯后跟随行驶',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 4,
+                'group_id' => 4,
             ),
             8 => 
             array (
@@ -87,7 +87,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '30秒之后不起步',
                 'description' => NULL,
                 'point' => -20,
-                'group' => 4,
+                'group_id' => 4,
             ),
             9 => 
             array (
@@ -95,7 +95,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '识别到路口经过的车辆并保持车距和车速行驶',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 5,
+                'group_id' => 5,
             ),
             10 => 
             array (
@@ -103,7 +103,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '合理并入车流继续行驶',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 5,
+                'group_id' => 5,
             ),
             11 => 
             array (
@@ -111,7 +111,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰撞其他车辆',
                 'description' => NULL,
                 'point' => -100,
-                'group' => 5,
+                'group_id' => 5,
             ),
             12 => 
             array (
@@ -119,7 +119,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '车辆进入施工路段后减速慢行',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 6,
+                'group_id' => 6,
             ),
             13 => 
             array (
@@ -127,7 +127,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞通过施工路段',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 6,
+                'group_id' => 6,
             ),
             14 => 
             array (
@@ -135,7 +135,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰到一个锥桶（引导牌）',
                 'description' => NULL,
                 'point' => -5,
-                'group' => 6,
+                'group_id' => 6,
             ),
             15 => 
             array (
@@ -143,7 +143,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰到一个锥桶（引导牌）',
                 'description' => NULL,
                 'point' => -5,
-                'group' => 6,
+                'group_id' => 6,
             ),
             16 => 
             array (
@@ -151,7 +151,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰到一个锥桶（引导牌）',
                 'description' => NULL,
                 'point' => -5,
-                'group' => 6,
+                'group_id' => 6,
             ),
             17 => 
             array (
@@ -159,7 +159,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰到一个锥桶（引导牌）',
                 'description' => NULL,
                 'point' => -5,
-                'group' => 6,
+                'group_id' => 6,
             ),
             18 => 
             array (
@@ -167,7 +167,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰到一个锥桶（引导牌）',
                 'description' => NULL,
                 'point' => -5,
-                'group' => 6,
+                'group_id' => 6,
             ),
             19 => 
             array (
@@ -175,7 +175,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰到一个锥桶（引导牌）',
                 'description' => NULL,
                 'point' => -5,
-                'group' => 6,
+                'group_id' => 6,
             ),
             20 => 
             array (
@@ -183,7 +183,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '正确执行换道',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 7,
+                'group_id' => 7,
             ),
             21 => 
             array (
@@ -191,7 +191,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '正确执行超车',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 7,
+                'group_id' => 7,
             ),
             22 => 
             array (
@@ -199,7 +199,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰撞车辆',
                 'description' => NULL,
                 'point' => -100,
-                'group' => 7,
+                'group_id' => 7,
             ),
             23 => 
             array (
@@ -207,7 +207,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '正确进入隧道通行',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 8,
+                'group_id' => 8,
             ),
             24 => 
             array (
@@ -215,7 +215,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞通过路段',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 8,
+                'group_id' => 8,
             ),
             25 => 
             array (
@@ -223,7 +223,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰路沿',
                 'description' => NULL,
                 'point' => -15,
-                'group' => 8,
+                'group_id' => 8,
             ),
             26 => 
             array (
@@ -231,7 +231,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰路沿',
                 'description' => NULL,
                 'point' => -15,
-                'group' => 8,
+                'group_id' => 8,
             ),
             27 => 
             array (
@@ -239,7 +239,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '正确进入雨雾路段通行',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 9,
+                'group_id' => 9,
             ),
             28 => 
             array (
@@ -247,7 +247,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无障碍通过该路段',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 9,
+                'group_id' => 9,
             ),
             29 => 
             array (
@@ -255,7 +255,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰路沿',
                 'description' => NULL,
                 'point' => -20,
-                'group' => 9,
+                'group_id' => 9,
             ),
             30 => 
             array (
@@ -263,7 +263,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰路沿',
                 'description' => NULL,
                 'point' => -20,
-                'group' => 9,
+                'group_id' => 9,
             ),
             31 => 
             array (
@@ -271,7 +271,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '终点停车成功',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 10,
+                'group_id' => 10,
             ),
             32 => 
             array (
@@ -279,7 +279,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '停车入位',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 10,
+                'group_id' => 10,
             ),
             33 => 
             array (
@@ -287,7 +287,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '在3分钟内启动',
                 'description' => NULL,
                 'point' => 5,
-                'group' => 11,
+                'group_id' => 11,
             ),
             34 => 
             array (
@@ -295,7 +295,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞行为',
                 'description' => NULL,
                 'point' => 10,
-                'group' => 11,
+                'group_id' => 11,
             ),
             35 => 
             array (
@@ -303,7 +303,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '通过匝道成功',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 12,
+                'group_id' => 12,
             ),
             36 => 
             array (
@@ -311,7 +311,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞行为',
                 'description' => NULL,
                 'point' => 10,
-                'group' => 12,
+                'group_id' => 12,
             ),
             37 => 
             array (
@@ -319,7 +319,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '执行 U-TURN 掉头成功',
                 'description' => NULL,
                 'point' => 10,
-                'group' => 13,
+                'group_id' => 13,
             ),
             38 => 
             array (
@@ -327,7 +327,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞行为',
                 'description' => NULL,
                 'point' => 10,
-                'group' => 13,
+                'group_id' => 13,
             ),
             39 => 
             array (
@@ -335,7 +335,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '驶过收费站成功',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 14,
+                'group_id' => 14,
             ),
             40 => 
             array (
@@ -343,7 +343,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '无碰撞行为',
                 'description' => NULL,
                 'point' => 20,
-                'group' => 14,
+                'group_id' => 14,
             ),
             41 => 
             array (
@@ -351,7 +351,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '是否检测到障碍车',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 15,
+                'group_id' => 15,
             ),
             42 => 
             array (
@@ -359,7 +359,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '是否正确执行换道',
                 'description' => NULL,
                 'point' => 15,
-                'group' => 15,
+                'group_id' => 15,
             ),
             43 => 
             array (
@@ -367,7 +367,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '碰撞车辆',
                 'description' => NULL,
                 'point' => -100,
-                'group' => 15,
+                'group_id' => 15,
             ),
             44 => 
             array (
@@ -375,7 +375,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '在停止线内停车',
                 'description' => NULL,
                 'point' => 10,
-                'group' => 16,
+                'group_id' => 16,
             ),
             45 => 
             array (
@@ -383,7 +383,7 @@ class MissionsTableSeeder extends Seeder
                 'name' => '减速、无碰撞行为',
                 'description' => NULL,
                 'point' => 5,
-                'group' => 16,
+                'group_id' => 16,
             ),
         ));
         
