@@ -13,26 +13,27 @@
 <body>
 <div class="p2-title">
     <h1>评分系统</h1>
-    <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn">开始干预</a>
-    <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn-hidden">结束干预</a>
+    <a id="a0" href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn" onclick="pre(0)">开始干预</a>
+    <a id="a1" href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn-hidden" onclick="pre(1)">结束干预</a>
 </div>
 <article class="p2-start">
-    <a href="javascript:;" class="weui_btn weui_btn_primary">开始比赛</a>
+    <a id="match_start" href="javascript:;" class="weui_btn weui_btn_primary" onclick="start()">开始比赛</a>
     <div class="p2-on">
-        <p>比赛时间:&nbsp;&nbsp;<label>12:10</label></p>
-        <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn">结束</a>
+        <p>比赛时间:&nbsp;&nbsp;<label id="match_time">12:10</label></p>
+        <a href="javascript:;" class="weui_btn weui_btn_warn p2-interv-btn" onclick="end()">结束</a>
     </div>
 </article>
 <article class="weui_article" style="margin-top: 70px;">
     {{--<div class="weui_cells_title">复选列表项</div>--}}
     @foreach($groups as $group)
-        <a href="javascript:;" class="weui_btn_mini" onclick="get_group_id('{{$group->id}}')">开始{{$group->name}}</a>
+        <a href="javascript:;" class="weui_btn weui_btn_sign"
+           onclick="set_group_id(event,'{{$group->id}}')">开始{{$group->name}}</a>
         <div class="weui_cells weui_cells_checkbox">
             @foreach($group->missions as $mission)
-                <label class="weui_cell weui_check_label" for="s11"
-                       onclick="exam('{{$car_id}}','{{$group->id}}','{{$mission->id}}')">
+                <label class="weui_cell weui_check_label" for="s{{$mission->id}}">
                     <div class="weui_cell_hd">
-                        <input type="checkbox" class="weui_check" name="checkbox1" id="s11">
+                        <input type="checkbox" class="weui_check" name="checkbox1" id="s{{$mission->id}}"
+                               onclick="exam('{{$car_id}}','{{$group->id}}','{{$mission->id}}')">
                         <i class="weui_icon_checked"></i>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
@@ -45,40 +46,100 @@
 </article>
 {{csrf_field()}}
 <script>
-    var group_id = 1;
-    function get_group_id(g_id) {
+    var group_id = 0;
+    var c = 0;
+    var t;
+    var token = $('input[type=hidden]').val();
+
+    /**
+     * 设置group_id
+     * @param e 点击的元素
+     * @param g_id group_id
+     */
+    function set_group_id(e,g_id) {
         group_id = g_id;
+//        console.log(e);
+        alert(e.target.innerHTML);
     }
+
+    /**
+     * 开始比赛
+     */
     function start() {
-        $.get('{{url("/match/start/$car_id")}}');
+        $.get('{{url("/match/start/$car_id")}}', function (r) {
+            if (r == 1) {
+                $(".p2-on").show();
+                $("#match_start").hide();
+                timedCount();
+            } else {
+                alert(r);
+            }
+        });
     }
+
+    /**
+     * 结束比赛
+     */
     function end() {
-        $.get('{{url("/match/end/$car_id")}}');
+        $.get('{{url("/match/end/$car_id")}}', function (r) {
+            if (r == 1) {
+                window.location.href = "{{url('/app/end')}}";
+            } else {
+                alert(r);
+            }
+        });
     }
+
+    /**
+     * 人工干预
+     * @param type 0开始人工干预 1结束人工干预
+     */
     function pre(type) {
+        if (group_id == 0) {
+            alert("请先点击开始的考点");
+            return;
+        }
         var data = {
             "type": type,
             "car_id":{{$car_id}},
-            "group_id": group_id
+            "group_id": group_id,
+            "_token":token
         };
-        $.post('{{route('intervention.store')}}', data, function (data) {
-            var i = "a" + (1 - type);
-            $('#a' + type).hide();
-            $('#a' + i).show();
+        $.post('{{route('intervention.store')}}', data, function (r) {
+            if (r == 1) {
+                var i = 1 - type;
+                $('#a' + type).hide();
+                $('#a' + i).show();
+            } else {
+                alert(r);
+            }
         });
     }
+
+    /**
+     * 评分
+     * @param car_id 车辆id
+     * @param group_id 考点id
+     * @param mission_id 任务id
+     */
     function exam(car_id, group_id, mission_id) {
         var data = {
             "car_id": car_id,
             "group_id": group_id,
             "mission_id": mission_id,
-            "_token":$('input[type=hidden]').value
+            "_token":token
         };
         $.post('{{route('exam.store')}}', data, function (a) {
             if (a != 1) {
                 alert(a);
             }
         });
+    }
+
+    function timedCount() {
+        $('#match_time').html(c);
+        c = c + 1;
+        t = setTimeout("timedCount()", 1000);
     }
 </script>
 </body>

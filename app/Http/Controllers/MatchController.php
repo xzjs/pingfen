@@ -21,7 +21,8 @@ class MatchController extends Controller
      */
     public function index()
     {
-        //
+        $matches=Match::with('car')->get();
+        return json_encode($matches);
     }
 
     /**
@@ -104,9 +105,13 @@ class MatchController extends Controller
     public function start($car_id)
     {
         try {
+            $deleteInterventions = Intervention::where('car_id', $car_id)->delete();
+            $deleteExam = Exam::where('car_id', $car_id)->delete();
+            $deleteMatch = Match::where('car_id', $car_id)->delete();
             $match = new Match();
             $match->car_id = $car_id;
             $match->save();
+            return 1;
         } catch (Exception $ex) {
             return $ex->getMessage();
         }
@@ -116,14 +121,21 @@ class MatchController extends Controller
     /**
      * 结束比赛
      * @param $car_id 车辆id
+     * @return int|string 1或异常
      */
     public function end($car_id)
     {
-        $match = new Match();
-        $m = $match->where('car_id', $car_id)->first();
-        $score = $this->get_exam_score($car_id) - $this->get_intervention_score($car_id);
-        $m->score = $score;
-        $m->save();
+        try {
+            $match = new Match();
+            $m = $match->where('car_id', $car_id)->first();
+            $score = $this->get_exam_score($car_id) - $this->get_intervention_score($car_id);
+            $m->score = $score;
+            $m->save();
+            return 1;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
     }
 
     /**

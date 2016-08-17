@@ -62,8 +62,9 @@ class InterventionController extends Controller
                     $score->save();
                 }
             }
+            return 1;
         } catch (Exception $e) {
-
+            return $e->getMessage();
         }
     }
 

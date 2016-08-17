@@ -55,7 +55,7 @@ class ExamController extends Controller
             $s = $score->where('car_id', $request->car_id)->where('group_id', $request->group_id)->get();
             $mission = new Mission();
             $m = $mission->find($request->mission_id);
-            if ($s) {
+            if (count($s)) {
                 $s->score +=$m->point;
             } else {
                 $score->car_id = $request->car_id;

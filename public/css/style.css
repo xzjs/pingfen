@@ -108,6 +108,14 @@ body{
     padding-left:20px;
 
 }
+.weui_btn_sign{
+    background: #04be02;
+    margin:10px 0 10px 0;
+    display:inline-block;
+}
+.weui_cells{
+    margin-top: -4px;
+}
 
 
 
