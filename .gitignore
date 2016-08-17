@@ -6,3 +6,7 @@ Homestead.json
 .env
 /_ide_helper.php
 .phpstorm.meta.php
+/storage/logs/*
+/storage/framework/views/*
+/storage/framework/sessions/*
+!.gitkeep
