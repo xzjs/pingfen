@@ -53,7 +53,6 @@ class Events
         $db1 = Db::instance('db1');
         // 向所有人发送 
         //Gateway::sendToAll("$client_id said $message");
-
         $m = json_decode($message);
         foreach ($m as $item) {
             $array = array(
@@ -63,7 +62,7 @@ class Events
                 'longitude' => $item[3],
                 'coord_type' => 1,
                 'loc_time' => time(),
-                'entity_name' => 'FC001'
+                'entity_name' => $item[0]
             );
             $options = array(
                 CURLOPT_RETURNTRANSFER => true,

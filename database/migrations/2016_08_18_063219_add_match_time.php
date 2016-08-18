@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMatchesTable extends Migration
+class AddMatchTime extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreateMatchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('matches', function (Blueprint $table) {
-            $table->increments('id');
-            $table->nullableTimestamps();
+        Schema::table('matches', function ($table) {
+            $table->integer('start_time');
+            $table->integer('end_time');
         });
     }
 
@@ -25,6 +25,6 @@ class CreateMatchesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('matches');
+
     }
 }

@@ -25,6 +25,42 @@ class CarsTableSeeder extends Seeder
                 'v2x_id' => 1,
             ),
         ));
+        \DB::table('cars')->insert(array (
+            0 =>
+                array (
+                    'id' => 2,
+                    'name' => '清华大学',
+                    'description' => '',
+                    'v2x_id' => 1,
+                ),
+        ));
+        \DB::table('cars')->insert(array (
+            0 =>
+                array (
+                    'id' => 3,
+                    'name' => '同济大学',
+                    'description' => '',
+                    'v2x_id' => 1,
+                ),
+        ));
+        \DB::table('cars')->insert(array (
+            0 =>
+                array (
+                    'id' => 4,
+                    'name' => '北京大学',
+                    'description' => '',
+                    'v2x_id' => 1,
+                ),
+        ));
+        \DB::table('cars')->insert(array (
+            0 =>
+                array (
+                    'id' => 5,
+                    'name' => '浙江大学',
+                    'description' => '',
+                    'v2x_id' => 1,
+                ),
+        ));
         
         
     }

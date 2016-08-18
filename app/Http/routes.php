@@ -24,6 +24,7 @@ Route::get('app/end', function () {
 Route::get('web', 'WebController@index');
 Route::get('match/start/{car_id}', 'MatchController@start');
 Route::get('match/end/{car_id}', 'MatchController@end');
+Route::get('match/get_result/{time}', 'MatchController@get_result');
 
 Route::resource('car', 'CarController');
 Route::resource('mission', 'MissionController');

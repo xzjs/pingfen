@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exam;
+use App\Group;
 use App\Mission;
 use App\Score;
 use Illuminate\Http\Request;
@@ -52,7 +53,9 @@ class ExamController extends Controller
             $exam->lon = 0;
             $result = $exam->save();
             $score = new Score();
-            $s = $score->where('car_id', $request->car_id)->where('group_id', $request->group_id)->get();
+            $mission=new Mission();
+            $m=$mission->find($request->mission_id);
+            $s = $score->where('car_id', $request->car_id)->where('group_id', $m->group_id)->get();
             $mission = new Mission();
             $m = $mission->find($request->mission_id);
             if (count($s)) {

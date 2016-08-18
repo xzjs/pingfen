@@ -21,7 +21,7 @@ class MatchController extends Controller
      */
     public function index()
     {
-        $matches=Match::with('car')->get();
+        $matches = Match::with('car')->get();
         return json_encode($matches);
     }
 
@@ -110,6 +110,7 @@ class MatchController extends Controller
             $deleteMatch = Match::where('car_id', $car_id)->delete();
             $match = new Match();
             $match->car_id = $car_id;
+            $match->start_time = time();
             $match->save();
             return 1;
         } catch (Exception $ex) {
@@ -130,6 +131,7 @@ class MatchController extends Controller
             $m = $match->where('car_id', $car_id)->first();
             $score = $this->get_exam_score($car_id) - $this->get_intervention_score($car_id);
             $m->score = $score;
+            $m->end_time=time();
             $m->save();
             return 1;
         } catch (Exception $e) {
@@ -165,5 +167,11 @@ class MatchController extends Controller
         $is = $int->where('car_id', $car_id)->get();
         $sum = count($is) / 2 * 15;
         return $sum;
+    }
+
+    public function get_result($time)
+    {
+        $results = Match::with('car')->where('updated_at', '>', $time)->get();
+        return json_encode($results);
     }
 }
