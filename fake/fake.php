@@ -51,7 +51,7 @@ for ($i = 1; $i < 47; $i++) {
     $data = array("mission_id" => $i, "car_id" => $car_id);
     $result = send_post($url, $data);
     echo $result;
-    sleep(10);
+    sleep(2);
 }
 
 $url=$url = "http://localhost/pingfen/public/match/end/";
