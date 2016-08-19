@@ -164,7 +164,7 @@
     <span><i class="fa fa-minus-circle"></i></span>
 </div>
 <div class="error-panel">
-    <p>车辆1：实时违规信息展示</p>
+    <p>车辆2：实时违规信息展示</p>
     <div class="error-cont swiper-container" id="J_ERR1">
         <div class="swiper-wrapper" id="id1">
 
