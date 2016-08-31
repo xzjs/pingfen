@@ -14,7 +14,6 @@ class CreateMatchesTable extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->increments('id');
-            $table->nullableTimestamps();
         });
     }
 
