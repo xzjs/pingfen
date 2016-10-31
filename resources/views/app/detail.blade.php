@@ -46,10 +46,8 @@
 </article>
 {{csrf_field()}}
 <script>
-    var group_id = 0;
-    var c = 0;
-    var t;
-    var token = $('input[type=hidden]').val();
+    var group_id = 0,c=0,t,token = $('input[type=hidden]').val(),showTimeInterv;
+    
 
     /**
      * 设置group_id
@@ -88,6 +86,7 @@
                 alert(r);
             }
         });
+        clearInterval(showTimeInterv);
     }
 
     /**
@@ -136,10 +135,15 @@
         });
     }
 
-    function timedCount() {
-        $('#match_time').html(c);
-        c = c + 1;
-        t = setTimeout("timedCount()", 1000);
+    function timedCount(){
+        showTimeInterv
+        var startDate=(new Date()).getTime();
+        showTimeInterv=setInterval(function(){
+            var d=new Date();
+            var diff=new Date(d.getTime()-startDate);
+            var date=Math.floor((diff.getMinutes())/60)+" : "+diff.getMinutes()+" : "+diff.getSeconds();
+                   $("#match_time").html(date); 
+                },1000)
     }
 </script>
 </body>
