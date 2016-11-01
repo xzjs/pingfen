@@ -55,17 +55,20 @@ class ExamController extends Controller
             $score = new Score();
             $mission=new Mission();
             $m=$mission->find($request->mission_id);
-            $s = $score->where('car_id', $request->car_id)->where('group_id', $m->group_id)->get();
+//            $s = $score->where('car_id', $request->car_id)->where('group_id', $m->group_id)->get();
             $mission = new Mission();
+            $s=Score::firstOrCreate(['car_id'=>$request->car_id,'group_id'=>$request->group_id]);
             $m = $mission->find($request->mission_id);
-            if (count($s)) {
-                $s->score +=$m->point;
-            } else {
-                $score->car_id = $request->car_id;
-                $score->group_id = $request->group_id;
-                $score->score = $m->point;
-                $score->save();
-            }
+//            if (count($s)) {
+//                $s->score +=$m->point;
+//            } else {
+//                $score->car_id = $request->car_id;
+//                $score->group_id = $request->group_id;
+//                $score->score = $m->point;
+//                $score->save();
+//            }
+            $s->score+=$m->point;
+            $s->save();
             return 1;
         } catch (Exception $e) {
             return $e->getMessage();

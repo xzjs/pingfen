@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Score extends Model
 {
     public $timestamps = false;
+
+    protected $fillable=['car_id','group_id','score'];
 }

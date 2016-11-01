@@ -10,3 +10,5 @@ Homestead.json
 /storage/framework/views/*
 /storage/framework/sessions/*
 !.gitkeep
+/storage/framework/
+/storage/logs/

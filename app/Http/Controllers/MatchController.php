@@ -108,6 +108,7 @@ class MatchController extends Controller
             $deleteInterventions = Intervention::where('car_id', $car_id)->delete();
             $deleteExam = Exam::where('car_id', $car_id)->delete();
             $deleteMatch = Match::where('car_id', $car_id)->delete();
+            $deleteScore=Score::where('car_id',$car_id)->delete();
             $match = new Match();
             $match->car_id = $car_id;
             $match->start_time = time();
