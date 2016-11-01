@@ -12,3 +12,4 @@ Homestead.json
 !.gitkeep
 /storage/framework/
 /storage/logs/
+.DS_Store
